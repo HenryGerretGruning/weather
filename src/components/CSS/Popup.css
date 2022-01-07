@@ -1,0 +1,57 @@
+.popup-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 30rem;
+  height: 15rem;
+  background-color: rgb(7, 7, 7);
+  z-index: 401;
+  padding: 3rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.buttons button {
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  font-weight: bold;
+  padding: 0.5rem 0.2rem;
+  color: var(--white);
+
+  transition: opacity 0.2s;
+}
+
+.buttons button:hover {
+  cursor: pointer;
+}
+
+.buttons button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 0.2rem;
+  width: 0;
+  background-color: var(--white);
+  margin: 1.7rem auto 0 auto;
+  border-radius: 1rem;
+
+  transition: width 0.2s;
+}
+
+.buttons button:hover::after {
+  width: 100%;
+}

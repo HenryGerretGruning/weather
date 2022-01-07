@@ -1,0 +1,63 @@
+.forecast {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  gap: 1rem;
+  overflow-x: scroll;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+}
+
+.forecast::-webkit-scrollbar {
+  background: rgb(77, 74, 72);
+  border-radius: 10px;
+  height: 0.4rem;
+}
+
+.forecast::-webkit-scrollbar-thumb {
+  background: var(--white);
+  border-radius: 10px;
+}
+
+.cold {
+  --highlight-color: var(--cold);
+}
+
+.warm {
+  --highlight-color: var(--warm);
+}
+
+.timestamp {
+  height: 10rem;
+  padding: 0.2rem 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-size: 200% 100%;
+  background-position: 50% 100%;
+  background-image: radial-gradient(
+    circle at bottom,
+    var(--highlight-color),
+    transparent 60%
+  );
+}
+
+.current-day {
+  grid-area: span 1 / span 2;
+  aspect-ratio: 1;
+}
+
+.temp {
+  color: var(--white);
+}
+
+.temp-range,
+.wind-speed {
+  white-space: nowrap;
+}
+
+.temp-range {
+  font-size: 0.8rem;
+}
